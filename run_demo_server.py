@@ -191,16 +191,18 @@ def save_result(img, rst):
 
 
 
-checkpoint_path = './east_icdar2015_resnet_v1_50_rbox'
+checkpoint_path = '/home/amit/text_deduction/EAST/east_icdar2015_resnet_v1_50_rbox/'
+path = "/home/amit/text_deduction/EAST/demo_images/"
 
-
-@app.route('/', methods=['POST'])
 def index_post():
     global predictor
+
     import io
-    bio = io.BytesIO()
-    request.files['image'].save(bio)
-    img = cv2.imdecode(np.frombuffer(bio.getvalue(), dtype='uint8'), 1)
+    # bio = io.BytesIO()
+    # request.files['image'].save(bio)
+    # img = cv2.imdecode(np.frombuffer(bio.getvalue(), dtype='uint8'), 1)
+    image = request.files['image']
+    img = cv2.imread(os.path.join(path, image.filename))
     rst = get_predictor(checkpoint_path)(img)
 
     save_result(img, rst)
