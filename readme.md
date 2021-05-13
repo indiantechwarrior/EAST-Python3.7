@@ -42,11 +42,15 @@ python multigpu_train.py --gpu_list=0 --input_size=512 --batch_size_per_gpu=8 --
 
 If you have more than one gpu, you can pass gpu ids to gpu_list(like --gpu_list=0,1,2,3)
 
-**Note: you should change the gt text file of icdar2015's filename to img_\*.txt instead of gt_img_\*.txt(or you can change the code in icdar.py), and some extra characters should be removed from the file.
+**Note: you should change the gt text file of icdar2015's filename to gt_img_\*.txt instead of img_\*.txt 
 See the examples in training_samples/**
+
+
 
 **This executable line is updated with reduced num_readers and batch_size_per_gpu, and code is running on top of pre-trained checkpoints. 
    Update current checkpoint file path in 'checkpoint' file in east_icdar2015_resnet_v1_50_rbox folder**
+   
+   
 
 ### Test
 run
