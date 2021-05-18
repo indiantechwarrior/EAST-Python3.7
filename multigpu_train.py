@@ -15,7 +15,7 @@ tf.app.flags.DEFINE_boolean('restore', False, 'whether to resotre from checkpoin
 tf.app.flags.DEFINE_integer('save_checkpoint_steps', 200, '')
 tf.app.flags.DEFINE_integer('save_summary_steps', 100, '')
 tf.app.flags.DEFINE_string('pretrained_model_path', '/content/EAST/data/resnet_v1_50.ckpt', '')
-tf.app.flags.DEFINE_string('save_checkpoint_steps_to_drive', '/content/EAST/tmp/east_icdar2015_resnet_v1_50_rbox','')
+tf.app.flags.DEFINE_string('save_checkpoint_steps_to_drive', '/content/EAST/tmp/east_icdar2015_resnet_v1_50_rbox/','')
 
 import model
 import icdar
